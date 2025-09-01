@@ -9,7 +9,7 @@ Modifikasilah kode pada baris 3 di VS Code atau Editor Code favorit Anda berikut
 Output yang diminta (Gantilah Fulan dengan nama Anda):
 
 Tampilan Screenshoot 
-![Screenshoot soal 1](./img/Screenshoot/Screenshot%20soal%201.png)
+![Screenshoot soal 1](./img/Screenshot%20soal%201.png)
 
 # Soal 2
 Mengapa sangat penting untuk memahami bahasa pemrograman Dart sebelum kita menggunakan framework Flutter ? Jelaskan!
