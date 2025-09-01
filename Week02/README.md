@@ -4,6 +4,8 @@ NIM : 2341720011
 
 NAMA : Marsya Aurelia Sefira
 
+KELAS : 3G
+
 # Soal 1
 Modifikasilah kode pada baris 3 di VS Code atau Editor Code favorit Anda berikut ini agar mendapatkan keluaran (output) sesuai yang diminta!
 Output yang diminta (Gantilah Fulan dengan nama Anda):
@@ -24,4 +26,8 @@ Jawaban : Dart adalah inti dari flutter, Flutter dibuat menggunakan Dart. Fitur 
 # Soal 4
 Buatlah penjelasan dan contoh eksekusi kode tentang perbedaan Null Safety dan Late variabel !
 
+Tampilan Screenshoot
+![Screenshoot soal 4](./img/Screenshot%20soal%204.png)
+
+Null Safety adalah fitur untuk mencegah nilai null pada variabel yang tidak diizinkan null, jika variabel boleh bernilai null, maka variabel harus diberi tanda ? . Sedangkan Late Variabel dapat digunakan ketika variabel akan diinisialisasi nanti, bukan langsung, jadi Late Variabel ini berguna untuk variabel yang nilainya baru diketahui saat runtime
 Kumpulkan jawaban Anda kepada dosen pengampu sesuai kesepakatan di kelas.
