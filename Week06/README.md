@@ -1,5 +1,11 @@
 # Pemograman Mobile Week 06
 
+Nama : Marsya Aurelia Sefira
+
+Kelas : 3G
+
+NIM : 2341720011
+
 # Praktikum 1 : Membangun Layout di Flutter
 
 ![Gambar : Praktikum 1](./layout_flutter/img/Screenshot%20P1.png)
@@ -55,3 +61,26 @@ Halaman Card
 Halaman Ratings
 
 ![Gambar : Halaman Rating](./basic_layout_flutter/img/TP1_Ratings.png)
+
+# Praktikum 5 : Membangun Navigasi di Flutter
+
+![Gambar : Praktikum 5](./belanja/img/P5.png)
+
+Saat nama produk di klik, makan akan ditampilkan sebagai berikut
+
+![Gambar : Praktikum 5](./belanja/img/P5_2.png)
+
+Gambar diatas adalah hasil implementasi membangun navigasi di flutter, mulai dari mendefinisikan route, membuat data model, membuat ListView dan itemBuilder dan menambahkan aksi pada ListView menggunakan InkWell
+
+# Tugas Praktikum 2
+
+Daftar produk katalog pada aplikasi belanja yang telah saya buat
+
+![Gambar : Halaman Home Aplikasi Belanja](./belanja/img/TP2_1.png)
+
+![Gambar : Halaman Home Aplikasi Belanja](./belanja/img/TP2_2.png)
+
+Ketika salah satu produk di klik, maka akan ditampilkan rincian produk sebagai berikut
+
+![Gambar : Halaman Rincian Produk](./belanja/img/TP2_3.png)
+
