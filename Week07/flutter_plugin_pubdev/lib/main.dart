@@ -99,13 +99,6 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Container(
-              color: const Color.fromARGB(255, 247, 0, 255),
-              width: 25,
-              child: const RedTextWidget(
-                text: 'Marsya Aurelia Sefira - 2341720011',
-              ),
-            ),
-            Container(
               color: Colors.yellowAccent,
               width: 50,
               child: const RedTextWidget(
@@ -115,7 +108,7 @@ class _MyHomePageState extends State<MyHomePage> {
             Container(
               color: Colors.greenAccent,
               width: 100,
-              child: const Text('You have pushed the button this many times:'),
+              child: const Text('Marsya Aurelia S/2341720011 You have pushed the button this many times:'),
             ),
           ],
         ),
