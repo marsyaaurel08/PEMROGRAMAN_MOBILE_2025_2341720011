@@ -26,11 +26,11 @@ Display a Picture
 
 Menggunakan hasil gambar dari praktikum 1
 
-![Gambar praktikum 2](./photo_filter_carousel/img/Praktikum2.png)
+![Gambar praktikum 2](./photo_filter_carousel/img/Praktikum2_2.png)
 
 Mencoba menggunakan gambar lain
 
-![Gambar praktikum 2](./photo_filter_carousel/img/Praktikum2_2.png)
+![Gambar praktikum 2](./photo_filter_carousel/img/Praktikum2.png)
 
 2. Gabungkan hasil praktikum 1 dengan hasil praktikum 2 sehingga setelah melakukan pengambilan foto, dapat dibuat filter carouselnya!
 
