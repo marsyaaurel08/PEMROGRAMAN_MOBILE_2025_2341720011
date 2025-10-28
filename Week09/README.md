@@ -42,7 +42,7 @@ Hasil Gambar dari Praktikum 1
 
 Gambar dengan filter carousel
 
-![Gambar dengan filter carousel](./photo_filter_carousel/img/Praktikum2.png)
+![Gambar dengan filter carousel](./photo_filter_carousel/img/Praktikum2_2.png)
 
 3. Jelaskan maksud void async pada praktikum 1?
 
