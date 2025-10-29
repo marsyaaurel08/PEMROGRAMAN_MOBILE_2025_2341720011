@@ -60,7 +60,25 @@ Jawaban : dari kode pada langkah 9, halaman master plan marsya akan ditampilkan 
 
 5. Kumpulkan link commit github => link akan dikumpulkan di classroom
 
+# Praktikum 3 : Membuat State di Multiple Screens
 
+![Gambar Praktikum 3](./master_plan/img/Praktikum3.gif)
+
+# Tugas Praktikum 3
+
+1. Dokumentasikan : dokumentasi praktikum 3 ada diatas
+
+2. Maksud dari gambar diagram dibawah ini adalah 
+
+![Gambar diagram praktikum 3](./master_plan/img/diagram.png)
+
+Jawaban : dari layar sebelah kiri menunjukkan dari MaterialApp yakni widget utama yang membungkus seluruh aplikasi dan menyediakan desain material design, kemudian lanjut ke PlanProvider yang menyediakan data plan ke seluruh widget tree dibawahnya, lanjut ke PlanCreatorScreen yakni layar tempat pengguna dapat membuat plan baru, dilanjutkan ke Column yang digunakan untuk menata widget secara vertikal, kemudian ke TextField yang digunakan untuk memasukkan nama plan baru, dan ke Expanded dan ListView untuk menampilkan daftar Plan. Terhubung dengan Navigator.push untuk berpindah dari layar kiri ke layar kanan. Dari layar sebelah kanan mulai dari MaterialApp , kemudian lanjut ke PlanScreen yang bertanggung jawab menampilkan plan, kemudian ke Scaffold yang menyediakan struktur dasar visualnya mulai dari (AppBar, Body, FloatingActionButton), lanjut ke Column yakni menata konten secara vertikal, kamudian dilanjutka ke Expanded dan ListView ntuk menampilkan daftar task yang ada dalam plan tersebut, dilanjutkan lagi ke SafeArea dan Text untuk menampilkan pesan dibagian bawah layar.
+
+3. Penjelasan langkah 14
+
+Jawaban : pada langkah 14 kode tsb mengambil daftar plan dari Plan Provider , jika kosong menampilkan pesan belum ada plan, jika sudah ada, maka daftar task dan plan akan ditampilkan.
+
+4. Kumpulkan link commit => akan dikumpulkan di classroom
 
 
 
