@@ -38,6 +38,28 @@ Jawaban : Langkah 11 method initState() digunakan untuk menginisialisasi dan pad
 
 6. Kumpulkan link commit => akan dikumpulkan di classroom
 
+# Praktikum 2 : Mengelola Data Layer dengan InheritedWidget dan InheritedNotifier
+
+Hasil output praktikum 2
+
+![Gambar Praktikum 2](./master_plan/img/Praktikum2.png)
+
+1. Penjelasan hasil output praktikum 2 : Pada gambar diatas tampilannya sama dengan hasil praktikum 1, yang membedakan adalah penambahan struktur folder provider yang digunakan untuk mengatur perubahan data secara reaktif, dipisah menggunakan folder provider agar lebih efisien dan terpisah dari tampilan.
+
+2. Jelaskan mana yang dimaksud InheritedWidget pada langkah 1 tersebut! Mengapa yang digunakan InheritedNotifier?
+
+Jawaban : InheritedWidget digunakan untuk membagikan data ke widget yang ada dibawahnya tanpa harus kirim lewat constructor, InheritedNotifier otomatis mendengar perubahan daru Listenable, dapat rebuild otomatis saat data berubah.
+
+3. Jelaskan maksud dari method di langkah 3 pada praktikum tersebut! Mengapa dilakukan demikian?
+
+Jawaban : method completedCount menghitung jumlah task yang sudah selesai, method completenessMessage membuat pesan ringkas tentang progres task "0 out of 5 tasks" yang nantinya ditampilkan pada bagian bawah halaman.
+
+4. Penjelasan langkah 9 
+
+Jawaban : dari kode pada langkah 9, halaman master plan marsya akan ditampilkan seperti hasil praktikum 2, daftar task akan ditampilkan dinamis, dan update otomatis jika ada perubahan.
+
+5. Kumpulkan link commit github => link akan dikumpulkan di classroom
+
 
 
 
