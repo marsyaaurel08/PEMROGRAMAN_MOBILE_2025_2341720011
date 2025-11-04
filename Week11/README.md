@@ -106,3 +106,17 @@ Perbedaan dari kode langkah 2 dengan kode langkah 5 dan 6 adalah langkah 2 hanya
 Capture hasil praktikum berupa gif
 
 ![Hasil Praktikum soal 6](./books/img/w11_praktikum3_soal6.gif)
+
+# Praktikum 4 : Memanggil Future secara paralel
+
+# Soal 7
+
+Capture hasil praktikum berupa gif
+
+![Hasil praktikum soal 7](./books/img/w11_praktikum4_soal7.gif)
+
+Setelah melakukan perubahan pada kode yakni memanggil future secara paralel yakni menggunakan future group seperti ini 
+
+![kode soal 7](./books/img/soal%207.png)
+
+, semua future akan dijalankan bersamaan, output yang dihasilkan hanya memakan waktu 3 detik bukan 9 detik karena future dijalankan bersamaan tidak satu persatu seperti sebelumnya.

@@ -33,58 +33,37 @@ class FuturePage extends StatefulWidget {
 
 class _FuturePageState extends State<FuturePage> {
   String result = '';
-
-  // Future<Response> getData() async {
-  //   const authority = 'www.googleapis.com';
-  //   const path = '/books/v1/volumes/HjAnaNpeowEC';
-  //   Uri url = Uri.https(authority, path);
-  //   return http.get(url);
-  // }
-
-  // Future<int> returnOneAsync() async {
-  //   await Future.delayed(const Duration(seconds: 3));
-  //   return 1;
-  // }
-
-  // Future<int> returnTwoAsync() async {
-  //   await Future.delayed(const Duration(seconds: 3));
-  //   return 2;
-  // }
-
-  // Future<int> returnThreeAsync() async {
-  //   await Future.delayed(const Duration(seconds: 3));
-  //   return 3;
-  // }
-
-  // Future count() async {
-  //   int total = 0;
-  //   total = await returnOneAsync();
-  //   total += await returnTwoAsync();
-  //   total += await returnThreeAsync();
-  //   setState(() {
-  //     result = total.toString();
-  //   });
-  // }
-
-  late Completer completer;
-
-  Future getNumber() {
-    completer = Completer<int>();
-    calculate();
-    return completer.future;
+  
+  Future<int> returnOneAsync() async {
+    await Future.delayed(const Duration(seconds: 3));
+    return 1;
   }
 
-  Future calculate() async {
-    // await Future.delayed(const Duration(seconds: 5));
-    // completer.complete(42);
+  Future<int> returnTwoAsync() async {
+    await Future.delayed(const Duration(seconds: 3));
+    return 2;
+  }
 
-    try {
-      await new Future.delayed(const Duration(seconds : 5));
-      completer.complete(42);
-    }
-    catch (_) {
-      completer.completeError({});
-    }
+  Future<int> returnThreeAsync() async {
+    await Future.delayed(const Duration(seconds: 3));
+    return 3;
+  }
+
+  void returnFG() {
+    FutureGroup<int> futureGroup = FutureGroup<int>();
+    futureGroup.add(returnOneAsync());
+    futureGroup.add(returnTwoAsync());
+    futureGroup.add(returnThreeAsync());
+    futureGroup.close();
+    futureGroup.future.then((List <int> value) {
+      int total = 0;
+      for (var element in value) {
+        total += element;
+      }
+      setState(() {
+        result = total.toString();
+      });
+    });
   }
 
   @override
@@ -104,23 +83,7 @@ class _FuturePageState extends State<FuturePage> {
             ElevatedButton(
               child: const Text('GO!'),
               onPressed: () {
-                getNumber().then((value) {
-                  setState(() {
-                    result = value.toString();
-                  });
-                }).catchError((e) {
-                  result = 'An error occurred';
-                });
-                //count();
-                // setState(() {});
-                // getData()
-                // .then((value) {
-                //   result = value.body.toString().substring(0, 450);
-                //   setState(() {});
-                // }).catchError((_) {
-                //   result = 'An error occurred';
-                //   setState(() {});
-                // });
+                returnFG();
               },
             ),
             const Spacer(),
