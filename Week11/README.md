@@ -120,3 +120,19 @@ Setelah melakukan perubahan pada kode yakni memanggil future secara paralel yakn
 ![kode soal 7](./books/img/soal%207.png)
 
 , semua future akan dijalankan bersamaan, output yang dihasilkan hanya memakan waktu 3 detik bukan 9 detik karena future dijalankan bersamaan tidak satu persatu seperti sebelumnya.
+
+# Soal 8
+
+Jelaskan perbedaan kode langkah 1 dan 4!
+
+Jawaban : 
+
+Kode langkah 1
+
+![Kode langkah 1](./books/img/soal%207.png)
+
+Kode langkah 2
+
+![Kode langkah 4](./books/img/soal%208.png)
+
+Perbedaannya adalah dengan menggunakan future wait tidak dapat menambah future secara dinamis, lebih sederhana, jumlah future harus pasti dan tetap, tetpai jika menggunakan future group bisa menambah future dinamis, dan tidak wajib memiliki jumlah future tetap. 
