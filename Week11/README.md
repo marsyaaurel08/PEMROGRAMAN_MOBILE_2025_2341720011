@@ -67,4 +67,18 @@ Capture hasil praktikum berupa gif
 ![Hasil Praktikum](./books/img/w11_praktikum2_soal4.gif)
 
 
+# Praktikum 3 : Menggunakan completer di future
 
+# Soal 5
+
+Jelaskan maksud kode langkah 2 tersebut!
+
+Jawaban : 
+
+![Soal 5](./books/img/soal%205.png)
+
+Kode diatas mendeklarasikan variabel completer, tetapi belum diinisialisasi, kemudian pada fungsi getNumber() membuat sebuah completer baru yang bisa menyelesaikan future<int>, kemudian langsung memanggil fungsi calculate yang menunggu terlebih dahulu 5 detik sebelum memberikan hasil 42 yag sudah ada didalam complete(42)
+
+Capture hasil praktikum berupa gif
+
+![Hasil Praktikum Soal 5](./books/img/w11_praktikum3_soal5.gif)
