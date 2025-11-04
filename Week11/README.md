@@ -82,3 +82,27 @@ Kode diatas mendeklarasikan variabel completer, tetapi belum diinisialisasi, kem
 Capture hasil praktikum berupa gif
 
 ![Hasil Praktikum Soal 5](./books/img/w11_praktikum3_soal5.gif)
+
+# Soal 6
+
+Jelaskan maksud perbedaan kode langkah 2 dengan langkah 5-6 tersebut!
+
+Jawaban : 
+
+Kode langkah 2
+
+![Langkah 2](./books/img/soal%205.png)
+
+Kode Langkah 5
+
+![Langkah 5](./books/img/soal%206%20lk%205.png)
+
+Kode Langkah 6
+
+![Langkah 6](./books/img/soal%206%20lk%206.png)
+
+Perbedaan dari kode langkah 2 dengan kode langkah 5 dan 6 adalah langkah 2 hanya mengerjakan proses sukses, tidak ada error handling, jadi kalau error progra bisa crash dan future tidak akan selesai. Sedangkan pada langkah 5-6 sudah ditambahkan try-catch dan callback untuk handling error, dan error ditangani dengan aman, jadi bisa diketahu sukses atau gagalnya, jika gagal maka akan ditampilkan pesan errornya.
+
+Capture hasil praktikum berupa gif
+
+![Hasil Praktikum soal 6](./books/img/w11_praktikum3_soal6.gif)
