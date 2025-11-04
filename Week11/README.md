@@ -42,9 +42,29 @@ Capture hasil praktikum berupa GIF
 
 ![Soal 3](./books/img/w11_praktikum1.gif)
 
+# Praktikum 2 : Menggunakan await/async untuk menghindari callbacks 
 
+Hasil praktikum 2 
 
+![Gambar prakitkum 2](./books/img/w11_praktikum2_soal4.gif)
 
+# Soal 4 
+
+Jelaskan maksud kode langkah 1 dan 2 tersebut!
+
+Jawaban : 
+
+![Kode langkah 1](/books/img/soal%204%20lk%201.png)
+
+Ketiga fungsi tersebut mengembalikan nilai bertipe int, tetapi secara asinkron, masing masing fungsi menunggu waktu 3 detik kemudian mengembalikan nilai int sesuai dengan yang ada didalam masing-masing fungsi tersebut, ketika dijalankan berurutan nilai yang didapatkan adalah 1+2+3 = 6 nilai 6 akan didapatkan setelah menunggu total 9 detik.
+
+![Kode langkah 2](./books/img/soal%204%20lk%202.png)
+
+Variabel total dibuat untuk menampung hasil penjumlahan awalnya diset ke 0, kemudian fungsi returnOneAsync() dijalankan, karena async, program menunggu, kemudian await yang artinya menunggu hingga hasilnya keluar terlebih dahulu, kemudian lanjut ke baris berikutnya dan menyimpan nilai ke variabel total, pada bagian setState mengubah nilai result menjadi string jadi dari angka 6 diubah ke teks '6'.
+
+Capture hasil praktikum berupa gif
+
+![Hasil Praktikum](./books/img/w11_praktikum2_soal4.gif)
 
 
 
