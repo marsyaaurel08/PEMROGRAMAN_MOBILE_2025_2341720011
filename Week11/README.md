@@ -136,3 +136,14 @@ Kode langkah 2
 ![Kode langkah 4](./books/img/soal%208.png)
 
 Perbedaannya adalah dengan menggunakan future wait tidak dapat menambah future secara dinamis, lebih sederhana, jumlah future harus pasti dan tetap, tetpai jika menggunakan future group bisa menambah future dinamis, dan tidak wajib memiliki jumlah future tetap. 
+
+# Praktikum 5 : Menangani Respon Error pada Async Code
+
+# Soal 8
+
+Menampilkan output dari returnError
+
+Capture hasil praktikum berupa gif
+
+![Hasil praktikum 5 soal 9](./books/img/w11_praktikum5_soal9.gif)
+
