@@ -139,7 +139,7 @@ Perbedaannya adalah dengan menggunakan future wait tidak dapat menambah future s
 
 # Praktikum 5 : Menangani Respon Error pada Async Code
 
-# Soal 8
+# Soal 9
 
 Menampilkan output dari returnError
 
@@ -147,3 +147,28 @@ Capture hasil praktikum berupa gif
 
 ![Hasil praktikum 5 soal 9](./books/img/w11_praktikum5_soal9.gif)
 
+# Soal 10
+
+Panggil method handleError() di ElevatedButton
+
+![handleError](./books/img/soal10onpressed.png)
+
+Hasil saat di run 
+
+![Complete](./books/img/soal%2010.png)
+
+Hasil praktikum dalam bentuk gif
+
+![Hasil praktikum 5 soal 10](./books/img/w11_praktikum5_soal10.gif)
+
+Perbedaan kode langkah 1 dan 4
+
+Kode langkah 1
+
+![Kode Langkah 1](./books/img/soal%2010%20lk%201.png)
+
+Kode langkah 4
+
+![Kode Langkah 4](./books/img/soal%2010%20lk%204.png)
+
+Perbedaan kedua kode tersebut adalah pada kode pertama fungsi retrunError hanya membuat error, dan melempar exception setelah 2 detik, sedangkan kode langkah 4 handleError berfungsi untuk menangkap error, menangani exception dari returnError menggunakan try catch finally.
