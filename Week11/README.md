@@ -217,4 +217,13 @@ Capture hasil praktikum berupa gif
 
 ![Hasil praktikum 7 soal 13](./books/img/w11_praktikum7_soal13.gif)
 
+# Soal 14
+
+Apakah ada perbedaan UI dengan langkah sebelumnya? Mengapa demikian?
+
+Jawaban : Tidak ada perubahan UI karena perubahan kode tersebut hanya berfungsi untuk menangani error, bukan mengubah tampilan utama widgetnya.
+
+Capture hasil praktikum berupa gif
+
+![Hasil praktikum 7 soal 14](./books/img/w11_praktikum7_soal14.gif)
 
