@@ -172,3 +172,12 @@ Kode langkah 4
 ![Kode Langkah 4](./books/img/soal%2010%20lk%204.png)
 
 Perbedaan kedua kode tersebut adalah pada kode pertama fungsi retrunError hanya membuat error, dan melempar exception setelah 2 detik, sedangkan kode langkah 4 handleError berfungsi untuk menangkap error, menangani exception dari returnError menggunakan try catch finally.
+
+# Praktikum 6 : Menggunakan future dengan statefulwdidget
+
+# Soal 11
+
+Menambahkan nama panggilan pada properti title sebagai identitas pekerjaan saya
+
+![Hasil praktikum 6 soal 11](./books/img/soal%2011.jpg)
+

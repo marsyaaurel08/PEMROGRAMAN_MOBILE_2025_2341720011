@@ -3,6 +3,7 @@ import 'package:async/async.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart';
 import 'package:http/http.dart' as http;
+import 'geolocation.dart';
 
 void main() {
   runApp(const MyApp());
@@ -38,49 +39,28 @@ class _FuturePageState extends State<FuturePage> {
     await Future.delayed(const Duration(seconds: 2));
     throw Exception('Something terrible happened!');
   }
-  
+
   Future handleError() async {
     try {
       await returnError();
-    }
-    catch (error) {
+    } catch (error) {
       setState(() {
         result = error.toString();
       });
-    }
-    finally {
+    } finally {
       print('Complete');
     }
   }
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text(
-          'Books Marsya',
-          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
-        ),
-        backgroundColor: Colors.yellow,
+    return MaterialApp(
+      title: 'Current Location Marsya',
+      theme: ThemeData(
+        primarySwatch: Colors.green,
+        visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      body: Center(
-        child: Column(
-          children: [
-            const Spacer(),
-            ElevatedButton(
-              child: const Text('GO!'),
-              onPressed: () {
-                handleError();
-              },
-            ),
-            const Spacer(),
-            Text(result),
-            const Spacer(),
-            const CircularProgressIndicator(),
-            const Spacer(),
-          ],
-        ),
-      ),
+      home: const LocationScreen(),
     );
   }
 }
