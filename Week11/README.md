@@ -54,7 +54,7 @@ Jelaskan maksud kode langkah 1 dan 2 tersebut!
 
 Jawaban : 
 
-![Kode langkah 1](/books/img/soal%204%20lk%201.png)
+![Kode langkah 1](./books/img/soal%204%20lk%201.png)
 
 Ketiga fungsi tersebut mengembalikan nilai bertipe int, tetapi secara asinkron, masing masing fungsi menunggu waktu 3 detik kemudian mengembalikan nilai int sesuai dengan yang ada didalam masing-masing fungsi tersebut, ketika dijalankan berurutan nilai yang didapatkan adalah 1+2+3 = 6 nilai 6 akan didapatkan setelah menunggu total 9 detik.
 
