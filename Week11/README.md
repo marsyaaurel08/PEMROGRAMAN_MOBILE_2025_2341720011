@@ -16,11 +16,15 @@ Hasil Praktikum 1
 
 Tambahkan nama panggilan Anda pada title app sebagai identitas hasil pekerjaan Anda
 
+Jawaban : 
+
 ![Soal 1 Menambahkan nama panggilan](./books/img/soal1nama.png)
 
 # Soal 2
 
 Coba akses judul buku favorit dengan URI, jika menampilkan data JSON maka telah berhasil
+
+Jawaban : 
 
 ![Soal 2 JSON buku favorit](./books/img/Soal2www.png)
 
@@ -179,5 +183,22 @@ Perbedaan kedua kode tersebut adalah pada kode pertama fungsi retrunError hanya 
 
 Menambahkan nama panggilan pada properti title sebagai identitas pekerjaan saya
 
+Jawaban : 
+
 ![Hasil praktikum 6 soal 11](./books/img/soal%2011.jpg)
 
+# Soal 12
+
+Menambahkan delay pada method getPosition()
+
+![Delay pada getPosition()](./books/img/soal%2012.png)
+
+Apakah Anda mendapatkan koordinat GPS ketika run di browser? Mengapa demikian?
+
+Jawaban : Tidak, saat di run di browser tidak akan menampilkan koordinat GPS karena browser tidak memiliki akses langsung ke sensor GPS perangkat. Berbeda ketika dijalankan di Android dapat menampilkan koordinat GPS karena HP memiliki sensor lokasi GPS yang bisa diakses langsung oleh aplikasi lewat API sistem operasi Android.
+
+Capture hasil praktikum berupa gif
+
+![Hasil praktikum 6 soal 12](./books/img/w11_praktikum6.gif)
+
+Setelah menambahkan delay pada getPosition(), aplikasi menampilkan koordinat lokasi setelah menunggu selama 3 detik.

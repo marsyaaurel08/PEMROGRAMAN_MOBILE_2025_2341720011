@@ -37,6 +37,7 @@ class _LocationScreenState extends State<LocationScreen> {
 
   Future<Position> getPosition() async {
     await Geolocator.requestPermission();
+    await Future.delayed(const Duration(seconds: 3));
     Position? position = await Geolocator.getCurrentPosition();
     return position;
   }

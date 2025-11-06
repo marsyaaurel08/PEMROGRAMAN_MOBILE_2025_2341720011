@@ -57,8 +57,12 @@ class _FuturePageState extends State<FuturePage> {
     return MaterialApp(
       title: 'Current Location Marsya',
       theme: ThemeData(
-        primarySwatch: Colors.green,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.green),
+        appBarTheme: const AppBarTheme(
+          backgroundColor: Colors.green,
+          foregroundColor: Colors.white,
+        ),
+        useMaterial3: true,
       ),
       home: const LocationScreen(),
     );
