@@ -202,3 +202,19 @@ Capture hasil praktikum berupa gif
 ![Hasil praktikum 6 soal 12](./books/img/w11_praktikum6.gif)
 
 Setelah menambahkan delay pada getPosition(), aplikasi menampilkan koordinat lokasi setelah menunggu selama 3 detik.
+
+# Praktikum 7 : Manajemen Future dengan FutureBuilder
+
+# Soal 13 
+
+Apakah ada perbedaan UI dengan praktikum sebelumnya Mengapa demikian?
+
+Jawaban:
+
+Saat pertama kali UI akan menampilkan loading, setelah data lokasi berhasil diambil UI otomatis berubah menampilkan hasil Position, transisi loading dilakukan otomatis berdasarkan state Future tanpa setState manual, pada kode sebelumnya tidak menampilkan loading, sedangkan dengan perubahan menggunakan FutureBuilder ini menampilkan loading dulu kemudian menampilkan koordinat lokasi.
+
+Capture hasil praktikum berupa gif
+
+![Hasil praktikum 7 soal 13](./books/img/w11_praktikum7_soal13.gif)
+
+
