@@ -227,3 +227,26 @@ Capture hasil praktikum berupa gif
 
 ![Hasil praktikum 7 soal 14](./books/img/w11_praktikum7_soal14.gif)
 
+# Praktikum 8 : Navigation route dengan Future Function
+
+# Soal 15
+
+Tambahkan nama panggilan pada properti title sebagai identitas
+
+![Menambahkan nama pada properti title sebagai identitas](./books/img/soal%2015.png)
+
+# Soal 16
+
+Mencoba klik setiap button, apa yang terjadi? Mengapa demikian?
+
+Jawaban : Saat menekan tombol, halaman kedua tertutup dan mengirimkan warna ke halaman pertama. Jadi ketika klik pilih warna, kemudian memilih salah satu warna, warna backgroundnya langsung berubah sesuai dengan warna yang dipilih. Hal ini terjadi karena Navigator.push()membuka halaman baru dan menunggu hasil menggunakan await, kemudian Navigator.pop() menutup halaman itu dengan mengirim data balik ke halaman sebelumnya.
+
+Mengganti 3 warna pada langkah 5 dengan warna favorit
+
+![Perubahan kode langkah 5](./books/)
+
+
+Capture hasil praktikum berupa gif
+
+![Hasil Praktikum 8](./books/img/w11_praktikum8.gif)
+
