@@ -243,10 +243,26 @@ Jawaban : Saat menekan tombol, halaman kedua tertutup dan mengirimkan warna ke h
 
 Mengganti 3 warna pada langkah 5 dengan warna favorit
 
-![Perubahan kode langkah 5](./books/)
+![Perubahan kode langkah 5](./books/img/soal16.png)
 
 
 Capture hasil praktikum berupa gif
 
 ![Hasil Praktikum 8](./books/img/w11_praktikum8.gif)
+
+# Praktikum 9 : Memanfaatkan async/await dengan widget dialog
+
+# Soal 17
+
+Mencoba klik setiap button, apa yang terjadi? Mengapa demikian?
+
+Jawaban : yang terjadi saat button di klik adalah muncul dialog untuk memilih pilihan warna yang ada, kemudian ketika klik salah satu pilihan warna, maka dialog tertutup, dan warna background layar akan berubah sesuai dengan warna yang dipilih, karena Navigator.pop() mengembalikan data ke fungsi await showDialog() lalu setState() memperbarui UI nya.
+
+Mengganti 3 warna pada langkah 3 dengan warna favorit
+
+![Perubahan kode langkah 3](./books/img/soal17.png)
+
+Capture hasil praktikum berupa gif
+
+![Hasil Praktikum 9](./books/img/w11_praktikum9.gif)
 
