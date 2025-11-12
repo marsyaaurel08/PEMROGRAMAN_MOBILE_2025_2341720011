@@ -45,3 +45,28 @@ Capture hasil praktikum berupa gif
 Jelaskan perbedaan menggunakan listen dan await for (langkah 9)!
 
 Jawaban : menggunakan listen menghasilkan perubahan warna setiap detik (real-time) dan terus mengalir, tetapi ketika menggunakan await menghasilkan perubahaan warna yang menunggu tiap event (sequential).
+
+# Praktikum 2 : Stream controllers dan sinks
+
+# Soal 6
+
+Jelaskan maksud kode langkah 8 dan 10 tersebut!
+
+Jawaban : 
+
+Kode langkah 8
+
+![Kode langkah 8](./stream_marsya/img/soal6kodeLK8.png)
+
+Maksud dari kode tersebut adalah untuk menghubungkan stream angka (NumberStream) dengan tampilan UI, setiap kali ada angka baru dikirim ke stream, UI akan otomatis di update lewat setState untuk menampilkan angka terbaru.
+
+Kode langkah 10
+
+![Kode langkah 10](./stream_marsya/img/soal6kodeLK10.png)
+
+Maksud dari kode tersebut adalah fungsi addRandomNumber() digunakan untuk menghasilkan angka acak yakni 0-9 kemudian mengirimkannya ke stream agar listener yang sudah terhubung di initState() menerima event baru dan memperbarui tampilan UI dengan angka terbaru.
+
+Capture hasil praktikum berupa gif
+
+![Hasil praktikum 2 soal 6](./stream_marsya/img/w12_praktikum2_soal6.gif)
+
