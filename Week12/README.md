@@ -34,3 +34,9 @@ Apa maksud isi perintah kode tersebut?
 
 Jawaban : kode tersebut menghasilkan warna baru setiap 1 detik, mengambil warna dari daftar colors secara bergantian. Fungsi getColors() mengembalikan aliran warna yang terus berubah setiap detik, dan berulang sesuai daftar warna yang tersedia.
 
+# Soal 4
+
+Capture hasil praktikum berupa gif
+
+![Hasil praktikum 1 soal 4](./stream_marsya/img/w12_praktikum1_soal4.gif)
+
