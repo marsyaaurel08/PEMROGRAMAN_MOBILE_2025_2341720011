@@ -123,3 +123,38 @@ Kode diatas dignakan untuk bagian mendengarkan hasil stream yang sudah di transf
 Capture hasil praktikum berupa gif
 
 ![Hasil Praktikum 3 soal 8](./stream_marsya/img/w12_praktikum3_soal8.gif)
+
+# Praktikum 4 : Subscribe ke stream events
+
+# Soal 9
+
+Jelaskan maksud kode langkah 2, 6 dan 8 tersebut!
+
+Jawaban : 
+
+Kode langkah 2
+
+![Kode langkah 2](./stream_marsya/img/soal9LK2.png)
+
+Kode diatas membuat stream (NumberStream), kemudian mendengarkan data yang masuk ke stream (listen()) kemudian mengupdate tampilan UI setiap kali ada data baru.
+
+Kode langkah 6
+
+![Kode langkah 6](./stream_marsya/img/soal9LK6.png)
+
+Kode ini memastikan bahwa stream listener dihentikan dengan aman saat widget tertutup, tidak ada data yang dikirim ke widget yang sudah hilang, serta aplikasi tetap berfungsi dan tidak error
+
+Kode langkah 8
+
+![Kode langkah 8](./stream_marsya/img/soal9LK8.png)
+
+Kode diatas digunakan untuk menghasilkan angka acak baru, kemudian mengirim angka tersebut ke stream, dan ketika tombol stop subscription di klik, maka tidak dapat meminta angka acak lagi, karena stream dihentikan.
+
+Capture hasil praktikum berupa gif
+
+![Hasil praktikum 4 soal 9](./stream_marsya/img/w12_praktikum4_soal9.gif)
+
+Ketika tombol stop subscription di klik maka akan muncul seperti ini
+
+![Ondone](./stream_marsya/img/soal9.png)
+
