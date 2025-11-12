@@ -24,5 +24,13 @@ Tambahkan 5 warna lainnya sesuai keinginan pada variabel colors
 
 ![Warna pada variabel colors](./stream_marsya/img/Soal2.png)
 
+# Soal 3 
 
+Jelaskan fungsi keyword yield* pada kode tersebut!
+
+Jawaban : keyword yield* digunakan untuk meneruskan seluruh nilai dari stream lain ke dalam stream saat ini, jadi seluruh data yang dihasilkan oleh Stream.periodic akan diteruskan langsung ke stream utama getColors()
+
+Apa maksud isi perintah kode tersebut?
+
+Jawaban : kode tersebut menghasilkan warna baru setiap 1 detik, mengambil warna dari daftar colors secara bergantian. Fungsi getColors() mengembalikan aliran warna yang terus berubah setiap detik, dan berulang sesuai daftar warna yang tersedia.
 
