@@ -93,3 +93,33 @@ Kode langkah 15
 ![Kode langkah 15](./stream_marsya/img/soal7kodeLK15.png)
 
 Kode diatas berfungsi untuk memuat objek random, yang bisa digunakan untuk menghasilkan angka acak, kemudian pada numberStream.addError() dia memanggil fungsi addError() yang berarti mengirim error ecvent ke stream, bukan data biasa.
+
+# Praktikum 3 : Injeksi data ke streams
+
+# Soal 8 
+
+Jelaskan maksud kode langkah 1-3 tersebut!
+
+Jawaban : 
+
+Kode langkah 1
+
+![Kode langkah 1](./stream_marsya/img/soal8LK1.png)
+
+Variabel pada kode diatas adalah untuk menampung logika transformasi data pada stream, tetapi nilainya akan diinisialisasi nanti.
+
+Kode langkah 2
+
+![Kode langkah 2](./stream_marsya/img/soal8LK2.png)
+
+Kode diatas digunakan untuk membuat transformer untuk memodifikasi data sebelum diteruskan ke listener, setiap data yang masuk ke stream akan dikalikan 10, kemudian dikirim lagi ke listener, jadi angka acaknya adalah kelipatan 10, kemudian terdapat handle error, jika stream mengirim error, maka bukan crash tetapi mengirim nilai -1, kemudan handleDone dipanggil ketika stream selesai, dan kemudian stream ditutup oleh sink.close()
+
+Kode langkah 3
+
+![Kode langkah 3](./stream_marsya/img/soal8LK3.png)
+
+Kode diatas dignakan untuk bagian mendengarkan hasil stream yang sudah di transformasi, data stream akan diproses dulu melewati transformer sebeum dikirim ke listener, kemudian memanggil listen((event)) setiap kali ada data baru, lalu dalam setState(), nilai last number diperbarui dengan data / event terbaru, sehingga UI juga ikut berubah, kemudian terdapat onErrror untuk menangani error.
+
+Capture hasil praktikum berupa gif
+
+![Hasil Praktikum 3 soal 8](./stream_marsya/img/w12_praktikum3_soal8.gif)
