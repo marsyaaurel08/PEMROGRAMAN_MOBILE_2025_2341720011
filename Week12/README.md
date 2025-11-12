@@ -40,3 +40,8 @@ Capture hasil praktikum berupa gif
 
 ![Hasil praktikum 1 soal 4](./stream_marsya/img/w12_praktikum1_soal4.gif)
 
+# Soal 5
+
+Jelaskan perbedaan menggunakan listen dan await for (langkah 9)!
+
+Jawaban : menggunakan listen menghasilkan perubahan warna setiap detik (real-time) dan terus mengalir, tetapi ketika menggunakan await menghasilkan perubahaan warna yang menunggu tiap event (sequential).
