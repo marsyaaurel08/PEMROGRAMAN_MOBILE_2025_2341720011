@@ -70,3 +70,26 @@ Capture hasil praktikum berupa gif
 
 ![Hasil praktikum 2 soal 6](./stream_marsya/img/w12_praktikum2_soal6.gif)
 
+# Soal 7 
+
+Jelaskan maksud kode langkah 13 sampai 15 tersebut!
+
+Jawaban : 
+
+Kode langkah 13
+
+![Kode langkah 13](./stream_marsya/img/soal7kodeLK13.png)
+
+Maksud dari kode diatas adalah mengirimkan sebuah error event ke dalam stream, yakni untuk memberikan sinyal bahwa terjadi kesalahan.
+
+Kode langkah 14
+
+![Kode langkah 14](./stream_marsya/img/soal7kodeLK14.png)
+
+Kode tersebut adalah cara widget menerima dan bereaksi terhadap data atau error yang dikirim secara real-time dari StreamController.
+
+Kode langkah 15
+
+![Kode langkah 15](./stream_marsya/img/soal7kodeLK15.png)
+
+Kode diatas berfungsi untuk memuat objek random, yang bisa digunakan untuk menghasilkan angka acak, kemudian pada numberStream.addError() dia memanggil fungsi addError() yang berarti mengirim error ecvent ke stream, bukan data biasa.
