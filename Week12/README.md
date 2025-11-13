@@ -158,3 +158,13 @@ Ketika tombol stop subscription di klik maka akan muncul seperti ini
 
 ![Ondone](./stream_marsya/img/soal9.png)
 
+# Praktikum 5 : Multiple stream subscription
+
+# Soal 10
+
+![Soal 10 error](./stream_marsya/img/soal10.png)
+
+Jelaskan mengapa error itu bisa terjadi?
+
+Jawaban : Default StreamController di Flutter bukan broadcast, artinya hanya boleh ada satu listener, pada subscription kedua error karena stream sudah didengarkan di baris sebelumnya.
+
