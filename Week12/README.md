@@ -177,3 +177,27 @@ Jawaban : pada output saya angka dihasilkan sebanyak 4kali karena terdapat dua l
 Capture hasil praktikum berupa gif
 
 ![Hasil praktikum 5 soal 11](./stream_marsya/img/w12_praktikum5_soal11.gif)
+
+# Praktikum 6 : StreamBuilder
+
+# Soal 12 
+
+Jelaskan maksud kode pada langkah 3 dan 7!
+
+Jawaban : 
+
+Kode langkah 3
+
+![Kode langkah 3](./streambuilder_marsya/img/soal12LK3.png)
+
+Kode diatas mengalirkan stream data berupa int, kemudian async digunakan untuk menghasilkan data secara bertahap, yield* melanjutkan data dari aliran stream lain, kemudian stream.periodic yang membuat otomatis mengirim data setiap 1 detik sekali, dan akhirnya menghasilkan angka acak dari 0 hingga 9 yakni angka dibawah angka 10.
+
+Kode langkah 7 
+
+![Kode langkah 7](./streambuilder_marsya/img/soal12LK7.png)
+
+Kode diatas berfungsi untuk menampilkan data yang terus berubah dari sebuah stream di Flutter, StreamBuilder disini berfungsi untuk memonitor stream secara real-time, menampilkan angka terbaru dari stream di layar, dan update otomatis.
+
+Capture hasil praktikum berupa gif
+
+![Hasil prakitkum 6 soal 12](./streambuilder_marsya/img/w12_praktikum6_soal12.gif)
