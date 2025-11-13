@@ -201,3 +201,15 @@ Kode diatas berfungsi untuk menampilkan data yang terus berubah dari sebuah stre
 Capture hasil praktikum berupa gif
 
 ![Hasil prakitkum 6 soal 12](./streambuilder_marsya/img/w12_praktikum6_soal12.gif)
+
+# Praktikum 7 : BLoC Pattern
+
+# Soal 13
+
+Jelaskan maksud praktikum ini! Dimanakah letak konsep BLoC nya?
+
+Jawaban : Maksud dari praktikum ini adalah menunjukkan cara kerja Stream dan Sink untuk menghubungkan logika BLoC dengan UI, serta melatih pemahaman mengenai aliran pengelolaan data (data flow) antara UI dan logika menggunakan Stream, dengan menerapkan pola BLoC sederhana. Konsep BLoC Pattern terlihat pada logika di random_bloc.dart dan bagian tampilan serta interaksi pada random_screen.dart.
+
+Capture hasil praktikum berupa gif
+
+![Hasil praktikum 7 soal 13](./streambuilder_marsya/img/w12_praktikum7_soal13.gif)
