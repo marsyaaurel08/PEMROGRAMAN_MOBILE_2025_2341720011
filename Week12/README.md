@@ -168,3 +168,12 @@ Jelaskan mengapa error itu bisa terjadi?
 
 Jawaban : Default StreamController di Flutter bukan broadcast, artinya hanya boleh ada satu listener, pada subscription kedua error karena stream sudah didengarkan di baris sebelumnya.
 
+# Soal 11
+
+Jelaskan mengapa hal itu bisa terjadi?
+
+Jawaban : pada output saya angka dihasilkan sebanyak 4kali karena terdapat dua listener, subscription dan subscription2, kemudian dua kali memanggil fungsi addNumberToSink di fungsi addRandomNumber().
+
+Capture hasil praktikum berupa gif
+
+![Hasil praktikum 5 soal 11](./stream_marsya/img/w12_praktikum5_soal11.gif)
