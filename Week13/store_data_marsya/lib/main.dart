@@ -27,10 +27,32 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  String pizzaString = '';
+
+  Future readJsonFile() async {
+    String myString = await DefaultAssetBundle.of(context)
+        .loadString('assets/pizzalist.json');
+    setState(() {
+      pizzaString = myString;
+    });
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    readJsonFile();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // isi widget nanti di sini
+      appBar: AppBar(
+        title: const Text('Flutter JSON Demo Marsya'),
+        backgroundColor: Colors.amber,
+      ),
+      body: Center(
+        child: Text(pizzaString),
+      ),
     );
   }
 }

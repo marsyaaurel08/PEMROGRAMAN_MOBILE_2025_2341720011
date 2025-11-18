@@ -18,3 +18,9 @@ Mengganti warna tema aplikasi dengan warna kesukaan
 
 ![Mengganti warna tema](./store_data_marsya/img/Soal%201%20Warna.png)
 
+# Soal 2
+
+Capture hasil praktikum 
+
+![Hasil praktikum 1 soal 2](./store_data_marsya/img/Soal%202.jpg)
+
