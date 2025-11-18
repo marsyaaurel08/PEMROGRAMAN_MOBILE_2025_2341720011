@@ -1,3 +1,5 @@
+import 'dart:convert';
+import '../models/pizza_model.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -11,9 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter JSON Demo Marsya',
-      theme: ThemeData(
-        primarySwatch: Colors.amber,
-      ),
+      theme: ThemeData(primarySwatch: Colors.amber),
       home: const MyHomePage(),
     );
   }
@@ -28,19 +28,35 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   String pizzaString = '';
+  List<Pizza> myPizzas = [];
 
-  Future readJsonFile() async {
-    String myString = await DefaultAssetBundle.of(context)
-        .loadString('assets/pizzalist.json');
-    setState(() {
-      pizzaString = myString;
-    });
+  Future<List<Pizza>> readJsonFile() async {
+    String myString = await DefaultAssetBundle.of(
+      context,
+    ).loadString('assets/pizzalist.json');
+    List pizzaMapList = jsonDecode(myString);
+    List<Pizza> myPizzas = [];
+    for (var pizza in pizzaMapList) {
+      Pizza myPizza = Pizza.fromJson(pizza);
+      myPizzas.add(myPizza);
+    }
+    String json = convertToJSON(myPizzas);
+    print(json);
+    return myPizzas;
   }
 
   @override
   void initState() {
     super.initState();
-    readJsonFile();
+    readJsonFile().then((value) {
+      setState(() {
+        myPizzas = value;
+      });
+    });
+  }
+
+  String convertToJSON(List<Pizza> pizzas) {
+    return jsonEncode(pizzas.map((pizza) => jsonEncode(pizza)).toList());
   }
 
   @override
@@ -50,8 +66,14 @@ class _MyHomePageState extends State<MyHomePage> {
         title: const Text('Flutter JSON Demo Marsya'),
         backgroundColor: Colors.amber,
       ),
-      body: Center(
-        child: Text(pizzaString),
+      body: ListView.builder(
+        itemCount: myPizzas.length,
+        itemBuilder: (context, index) {
+          return ListTile(
+            title: Text(myPizzas[index].pizzaName),
+            subtitle: Text(myPizzas[index].description),
+          );
+        },
       ),
     );
   }

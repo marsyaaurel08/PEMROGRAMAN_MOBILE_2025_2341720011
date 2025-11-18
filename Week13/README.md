@@ -24,3 +24,13 @@ Capture hasil praktikum
 
 ![Hasil praktikum 1 soal 2](./store_data_marsya/img/Soal%202.jpg)
 
+# Soal 3 
+
+Capture hasil praktikum
+
+![Hasil praktikum 1 soal 3](./store_data_marsya/img/Soal%203.jpg)
+
+List objek Pizza dikonversi menjadi JSON String
+
+![Debug konsole konversi Json](./store_data_marsya/img/P1.png)
+
