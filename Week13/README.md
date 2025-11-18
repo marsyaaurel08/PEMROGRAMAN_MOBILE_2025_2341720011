@@ -1,0 +1,20 @@
+# Pemrograman Mobile Week 13
+
+Nama : Marsya Aurelia Sefira
+
+Kelas : 3G
+
+NIM : 2341720011
+
+# Praktikum 1 : Konversi Dart model ke JSON
+
+# Soal 1
+
+Tambahkan nama panggilan pada title app 
+
+![Menambahkan nama panggilan](./store_data_marsya/img/Soal%201%20Nama.png)
+
+Mengganti warna tema aplikasi dengan warna kesukaan
+
+![Mengganti warna tema](./store_data_marsya/img/Soal%201%20Warna.png)
+
