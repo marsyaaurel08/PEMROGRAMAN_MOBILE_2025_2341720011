@@ -44,4 +44,17 @@ Capture hasil running aplikasi
 
 Tidak ada data null yang ditampilkan
 
+# Praktikum 3 : Menangani error JSON
+
+# Soal 5
+
+Jelaskan maksud kode lebih safe dan maintainable!
+
+Jawaban : semua nilai final dipastikan terisi sebelum objek dibuat, dart akan memastikan bahwa semua field terisi dengan nilai yang valid sebelum object Pizza terbentuk. Kode lebih maintainable karena, semua proses parsing JSON terstruktur dan berada dalam satu tempat yang memudahkan debugging, riview, dan penambahan fitur baru. Jadi kode ini safe karena tidak crash ketika API error, null aman, tipe data aman, semua field final terisi dengan benar, struktur constructor dijamin valid oleh Dart, maintainable karena parsing JSON rapi dan dalam satu blok, mudah untuk menambah field baru, mudah dibaca developer lain, UI tidak perlu ikut memproses JSON, kode bertahan lama meskipun API berubah
+
+Capture hasil praktikum
+
+![Hasil Praktikum 3](./store_data_marsya/img/Praktikum%203.jpg)
+
+Hasil praktikum, sama seperti sebelumnya
 
