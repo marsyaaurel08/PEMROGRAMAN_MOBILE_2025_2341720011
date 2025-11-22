@@ -34,3 +34,14 @@ List objek Pizza dikonversi menjadi JSON String
 
 ![Debug konsole konversi Json](./store_data_marsya/img/P1.png)
 
+# Praktikum 2 : Handle kompatibilitas data JSON
+
+# Soal 4 
+
+Capture hasil running aplikasi 
+
+![Hasil Praktikum 2](./store_data_marsya/img/Praktikum%202.jpg)
+
+Tidak ada data null yang ditampilkan
+
+

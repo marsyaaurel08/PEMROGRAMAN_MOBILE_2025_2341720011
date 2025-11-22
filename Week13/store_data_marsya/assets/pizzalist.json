@@ -18,7 +18,7 @@
       "pizzaName": "Napoli", 
       "description": "Pizza with tomato, garlic and anchovies",
       "price": 9.50, 
-      "imageUrl": "images/marinara.png"  
+      "imageUrl": "images/napoli.png"  
     }, 
     { 
       "id": 4, 
