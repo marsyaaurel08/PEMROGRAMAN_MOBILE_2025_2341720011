@@ -97,3 +97,11 @@ maksud kode tersebut adalah menambahkan button read file untuk menampilkan isi d
 Capture hasil praktikum berupa gif
 
 ![Hasil praktikum 6](./store_data_marsya/img/w13_praktikum6_soal8.gif)
+
+# Praktikum 7 : Menyimpan data dengan enkripsi/deskripsi
+
+# Soal 9
+
+Hasil praktikum berupa gif
+
+![Hasil praktikum 7](./store_data_marsya/img/w13_praktikum7_soal9.gif)

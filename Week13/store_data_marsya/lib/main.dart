@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:path_provider/path_provider.dart';
 import 'dart:io';
+import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 
 void main() {
   runApp(const MyApp());
@@ -37,6 +38,11 @@ class _MyHomePageState extends State<MyHomePage> {
   String tempPath = '';
   late File myfile;
   String filetext = '';
+
+  final pwdController = TextEditingController();
+  String myPass = '';
+  final storage = const FlutterSecureStorage();
+  final myKey = 'myPass';
 
   Future<List<Pizza>> readJsonFile() async {
     String myString = await DefaultAssetBundle.of(
@@ -92,7 +98,7 @@ class _MyHomePageState extends State<MyHomePage> {
     }
   }
 
-  Future<bool> readFile() async { 
+  Future<bool> readFile() async {
     try {
       String fileContent = await myfile.readAsString();
       setState(() {
@@ -102,6 +108,15 @@ class _MyHomePageState extends State<MyHomePage> {
     } catch (e) {
       return false;
     }
+  }
+
+  Future writeToSecureStorage() async {
+    await storage.write(key: myKey, value: pwdController.text);
+  }
+
+  Future<String> readFromSecureStorage() async {
+    String secret = await storage.read(key: myKey) ?? '';
+    return secret;
   }
 
   @override
@@ -127,14 +142,23 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          Text('Documents Path: $documentsPath'),
-          Text('Temporary Path: $tempPath'),
-
+          TextField(controller: pwdController),
           ElevatedButton(
-            child: const Text('Read File'),
-            onPressed: () => readFile(),
+            child: const Text('Save Value'),
+            onPressed: () {
+              writeToSecureStorage();
+            },
           ),
-          Text(filetext),
+          ElevatedButton(
+            child: const Text('Read Value'),
+            onPressed: () async {
+              String value = await readFromSecureStorage();
+              setState(() {
+                myPass = value;
+              });
+            },
+          ),
+          Text(myPass),
         ],
       ),
     );
