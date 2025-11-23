@@ -1,6 +1,7 @@
 import 'dart:convert';
 import '../models/pizza_model.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 void main() {
   runApp(const MyApp());
@@ -29,6 +30,7 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   String pizzaString = '';
   List<Pizza> myPizzas = [];
+  int appCounter = 0;
 
   Future<List<Pizza>> readJsonFile() async {
     String myString = await DefaultAssetBundle.of(
@@ -45,14 +47,31 @@ class _MyHomePageState extends State<MyHomePage> {
     return myPizzas;
   }
 
+  Future readAndWritePreference() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+
+    appCounter = prefs.getInt('counter') ?? 0;
+    appCounter++;
+
+    await prefs.setInt('counter', appCounter);
+
+    setState(() {
+      appCounter = appCounter;
+    });
+  }
+
+  Future deletePreference() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    await prefs.clear();
+    setState(() {
+      appCounter = 0;
+    });
+  }
+
   @override
   void initState() {
     super.initState();
-    readJsonFile().then((value) {
-      setState(() {
-        myPizzas = value;
-      });
-    });
+    readAndWritePreference();
   }
 
   String convertToJSON(List<Pizza> pizzas) {
@@ -63,18 +82,19 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Flutter JSON Demo Marsya'),
-        backgroundColor: Colors.amber,
+        title: const Text('Shared Preferences Marsya'),
+        backgroundColor: Colors.lightGreenAccent,
       ),
-      body: ListView.builder(
-        itemCount: myPizzas.length,
-        itemBuilder: (context, index) {
-          return ListTile(
-            title: Text(myPizzas[index].pizzaName),
-            subtitle: Text(myPizzas[index].description),
-            trailing: Text('\$${myPizzas[index].price.toStringAsFixed(2)}'),
-          );
-        },
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            Text('You have opened the app $appCounter times.'),
+            ElevatedButton(onPressed: () {
+              deletePreference();
+            }, child: Text('Reset counter')),
+          ],
+        ),
       ),
     );
   }

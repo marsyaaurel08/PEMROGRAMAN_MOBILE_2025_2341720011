@@ -58,3 +58,10 @@ Capture hasil praktikum
 
 Hasil praktikum, sama seperti sebelumnya
 
+# Praktikum 4 : SharedPreferences
+
+# Soal 6
+
+Capture hasil praktikum berupa gif
+
+![Hasil Praktikum 4](./store_data_marsya/img/w13_praktikum4_soal5.gif)
