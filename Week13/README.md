@@ -65,3 +65,11 @@ Hasil praktikum, sama seperti sebelumnya
 Capture hasil praktikum berupa gif
 
 ![Hasil Praktikum 4](./store_data_marsya/img/w13_praktikum4_soal5.gif)
+
+# Praktikum 5 : Akses filesystem denga path_provider
+
+# Soal 7
+
+Capture hasil praktikum
+
+![Hasil praktikum 5](./store_data_marsya/img/Praktikum%205.jpg)

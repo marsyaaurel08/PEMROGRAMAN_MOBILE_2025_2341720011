@@ -2,6 +2,7 @@ import 'dart:convert';
 import '../models/pizza_model.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:path_provider/path_provider.dart';
 
 void main() {
   runApp(const MyApp());
@@ -28,24 +29,26 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  String pizzaString = '';
-  List<Pizza> myPizzas = [];
+  // String pizzaString = '';
+  // List<Pizza> myPizzas = [];
   int appCounter = 0;
+  String dosumentsPath = '';
+  String tempPath = '';
 
-  Future<List<Pizza>> readJsonFile() async {
-    String myString = await DefaultAssetBundle.of(
-      context,
-    ).loadString('assets/pizzalist.json');
-    List pizzaMapList = jsonDecode(myString);
-    List<Pizza> myPizzas = [];
-    for (var pizza in pizzaMapList) {
-      Pizza myPizza = Pizza.fromJson(pizza);
-      myPizzas.add(myPizza);
-    }
-    String json = convertToJSON(myPizzas);
-    print(json);
-    return myPizzas;
-  }
+  // Future<List<Pizza>> readJsonFile() async {
+  //   String myString = await DefaultAssetBundle.of(
+  //     context,
+  //   ).loadString('assets/pizzalist.json');
+  //   List pizzaMapList = jsonDecode(myString);
+  //   List<Pizza> myPizzas = [];
+  //   for (var pizza in pizzaMapList) {
+  //     Pizza myPizza = Pizza.fromJson(pizza);
+  //     myPizzas.add(myPizza);
+  //   }
+  //   String json = convertToJSON(myPizzas);
+  //   print(json);
+  //   return myPizzas;
+  // }
 
   Future readAndWritePreference() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
@@ -68,10 +71,19 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
+  Future getPaths() async {
+    final docDir = await getApplicationDocumentsDirectory();
+    final tempDir = await getTemporaryDirectory();
+    setState(() {
+      dosumentsPath = docDir.path;
+      tempPath = tempDir.path;
+    });
+  }
+
   @override
   void initState() {
     super.initState();
-    readAndWritePreference();
+    getPaths();
   }
 
   String convertToJSON(List<Pizza> pizzas) {
@@ -82,20 +94,16 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Shared Preferences Marsya'),
-        backgroundColor: Colors.lightGreenAccent,
+        title: const Text('Path Provider Marsya'),
+        backgroundColor: Colors.purpleAccent,
       ),
-      body: Center(
-        child: Column(
+      body: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            Text('You have opened the app $appCounter times.'),
-            ElevatedButton(onPressed: () {
-              deletePreference();
-            }, child: Text('Reset counter')),
+            Text('Documents Path: $dosumentsPath'),
+            Text('Temporary Path: $tempPath'),
           ],
         ),
-      ),
-    );
+      );
   }
 }
