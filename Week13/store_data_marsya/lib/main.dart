@@ -3,6 +3,7 @@ import '../models/pizza_model.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:path_provider/path_provider.dart';
+import 'dart:io';
 
 void main() {
   runApp(const MyApp());
@@ -29,26 +30,28 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  // String pizzaString = '';
-  // List<Pizza> myPizzas = [];
+  String pizzaString = '';
+  List<Pizza> myPizzas = [];
   int appCounter = 0;
-  String dosumentsPath = '';
+  String documentsPath = '';
   String tempPath = '';
+  late File myfile;
+  String filetext = '';
 
-  // Future<List<Pizza>> readJsonFile() async {
-  //   String myString = await DefaultAssetBundle.of(
-  //     context,
-  //   ).loadString('assets/pizzalist.json');
-  //   List pizzaMapList = jsonDecode(myString);
-  //   List<Pizza> myPizzas = [];
-  //   for (var pizza in pizzaMapList) {
-  //     Pizza myPizza = Pizza.fromJson(pizza);
-  //     myPizzas.add(myPizza);
-  //   }
-  //   String json = convertToJSON(myPizzas);
-  //   print(json);
-  //   return myPizzas;
-  // }
+  Future<List<Pizza>> readJsonFile() async {
+    String myString = await DefaultAssetBundle.of(
+      context,
+    ).loadString('assets/pizzalist.json');
+    List pizzaMapList = jsonDecode(myString);
+    List<Pizza> myPizzas = [];
+    for (var pizza in pizzaMapList) {
+      Pizza myPizza = Pizza.fromJson(pizza);
+      myPizzas.add(myPizza);
+    }
+    String json = convertToJSON(myPizzas);
+    print(json);
+    return myPizzas;
+  }
 
   Future readAndWritePreference() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
@@ -75,15 +78,39 @@ class _MyHomePageState extends State<MyHomePage> {
     final docDir = await getApplicationDocumentsDirectory();
     final tempDir = await getTemporaryDirectory();
     setState(() {
-      dosumentsPath = docDir.path;
+      documentsPath = docDir.path;
       tempPath = tempDir.path;
     });
+  }
+
+  Future<bool> writeFile() async {
+    try {
+      await myfile.writeAsString('Marsya, Aurelia S, 2341720011');
+      return true;
+    } catch (e) {
+      return false;
+    }
+  }
+
+  Future<bool> readFile() async { 
+    try {
+      String fileContent = await myfile.readAsString();
+      setState(() {
+        filetext = fileContent;
+      });
+      return true;
+    } catch (e) {
+      return false;
+    }
   }
 
   @override
   void initState() {
     super.initState();
-    getPaths();
+    getPaths().then((_) {
+      myfile = File('$documentsPath/data.txt');
+      writeFile();
+    });
   }
 
   String convertToJSON(List<Pizza> pizzas) {
@@ -98,12 +125,18 @@ class _MyHomePageState extends State<MyHomePage> {
         backgroundColor: Colors.purpleAccent,
       ),
       body: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            Text('Documents Path: $dosumentsPath'),
-            Text('Temporary Path: $tempPath'),
-          ],
-        ),
-      );
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          Text('Documents Path: $documentsPath'),
+          Text('Temporary Path: $tempPath'),
+
+          ElevatedButton(
+            child: const Text('Read File'),
+            onPressed: () => readFile(),
+          ),
+          Text(filetext),
+        ],
+      ),
+    );
   }
 }

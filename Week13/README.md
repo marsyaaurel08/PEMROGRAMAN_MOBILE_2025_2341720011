@@ -73,3 +73,27 @@ Capture hasil praktikum berupa gif
 Capture hasil praktikum
 
 ![Hasil praktikum 5](./store_data_marsya/img/Praktikum%205.jpg)
+
+# Praktikum 6 : Akses filesystem dengan direktori
+
+# Soal 8 
+
+Jelaskan maksud kode pada langkah 3 dan 7!
+
+Jawaban :
+
+Kode langkah 3
+
+![Kode langkah 3](./store_data_marsya/img/Soal%208%20LK3.png)
+
+maksud kode langkah 3 tersebut adalah untuk mencoba menulis teks yang telah dicantumkan / teks tertentu ke dalam sebuah file, jika berhasil maka mengembalikan nilai true, dan jika gagal mengembalikan nilai false.
+
+Kode langkah 7
+
+![Kode langkah 7](./store_data_marsya/img/Soal%208%20LK7.png)
+
+maksud kode tersebut adalah menambahkan button read file untuk menampilkan isi dari file tersebut, ketika button read file di klik.
+
+Capture hasil praktikum berupa gif
+
+![Hasil praktikum 6](./store_data_marsya/img/w13_praktikum6_soal8.gif)
