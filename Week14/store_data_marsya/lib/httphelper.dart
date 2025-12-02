@@ -7,6 +7,23 @@ class HttpHelper {
   final String authority = '24y6w.wiremockapi.cloud';
   final String path = 'pizzalist';
 
+  static final HttpHelper _httpHelper = HttpHelper._internal();
+  HttpHelper._internal();
+  factory HttpHelper() {
+    return _httpHelper;
+  }
+
+  Future<String> postPizza(Pizza pizza) async {
+    const postPath = '/pizza';
+    String post = json.encode(pizza.toJson());
+    Uri url = Uri.https(authority, postPath);
+    http.Response r = await http.post(
+      url,
+      body: post,
+  );
+  return r.body;
+  }
+
   Future<List<Pizza>> getPizzaList() async {
     final Uri url = Uri.https(authority, path);
 
@@ -15,8 +32,9 @@ class HttpHelper {
     if (result.statusCode == HttpStatus.ok) {
       final jsonResponse = json.decode(result.body);
 
-      List<Pizza> pizzas =
-          jsonResponse.map<Pizza>((i) => Pizza.fromJson(i)).toList();
+      List<Pizza> pizzas = jsonResponse
+          .map<Pizza>((i) => Pizza.fromJson(i))
+          .toList();
 
       return pizzas;
     } else {

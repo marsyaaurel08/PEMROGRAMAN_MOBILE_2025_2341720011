@@ -23,3 +23,13 @@ Mengganti warna dengan warna kesukaan
 Capture hasil praktikum 
 
 ![Hasil Praktikum 1](./store_data_marsya/img/soal1.jpg)
+
+# Praktikum 2 : Mengirim Data ke Web Service (POST)
+
+Menambahkan field baru dalam JSON maupun POST ke Wiremock!
+
+![Soal 2](./store_data_marsya/img/w14_praktikum2_soal2.png)
+
+Capture hasil praktikum berupa gif
+
+![Hasil Praktikum 2](./store_data_marsya/img/w14_praktikum2.gif)
