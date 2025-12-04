@@ -1,5 +1,5 @@
 import 'dart:convert';
-import '../models/pizza_model.dart';
+import 'models/pizza_model.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:path_provider/path_provider.dart';
@@ -162,13 +162,23 @@ class _MyHomePageState extends State<MyHomePage> {
           return ListView.builder(
             itemCount: (snapshot.data == null) ? 0 : snapshot.data!.length,
             itemBuilder: (BuildContext context, int position) {
+              final pizza = snapshot.data![position];
               return ListTile(
-                title: Text(snapshot.data![position].pizzaName),
+                title: Text(pizza.pizzaName),
                 subtitle: Text(
-                  snapshot.data![position].description +
-                      ' - € ' +
-                      snapshot.data![position].price.toString(),
+                  pizza.description + ' - € ' + pizza.price.toString(),
                 ),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => PizzaDetailScreen(
+                        pizza: pizza,
+                        isNew: false,
+                      ),
+                    ),
+                  );
+                },
               );
             },
           );
@@ -179,7 +189,10 @@ class _MyHomePageState extends State<MyHomePage> {
         onPressed: () {
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => PizzaDetailScreen()),
+            MaterialPageRoute(builder: (context) => PizzaDetailScreen(
+              pizza: Pizza.fromJson({}),
+              isNew: true,
+            )),
           );
         },
       ),

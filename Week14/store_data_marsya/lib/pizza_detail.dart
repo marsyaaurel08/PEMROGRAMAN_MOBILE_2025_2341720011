@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
-import '../../models/pizza_model.dart';
+import 'models/pizza_model.dart';
 import 'httphelper.dart';
 
 class PizzaDetailScreen extends StatefulWidget {
-  PizzaDetailScreen({super.key});
+  final Pizza pizza;
+  final bool isNew;
+  const PizzaDetailScreen(
+      {super.key, required this.pizza, required this.isNew});
+
   @override
   State<PizzaDetailScreen> createState() => _PizzaDetailScreenState();
 }
@@ -17,6 +21,37 @@ class _PizzaDetailScreenState extends State<PizzaDetailScreen> {
   final TextEditingController txtCategory = TextEditingController();
   String operationResult = '';
 
+  @override
+void initState() {
+  if (!widget.isNew) {
+    txtId.text = widget.pizza.id.toString();
+    txtName.text = widget.pizza.pizzaName;
+    txtDescription.text = widget.pizza.description;
+    txtPrice.text = widget.pizza.price.toString();
+    txtImageUrl.text = widget.pizza.imageUrl;
+    txtCategory.text = widget.pizza.category;
+  }
+  super.initState();
+}
+
+Future savePizza() async {
+  HttpHelper helper = HttpHelper();
+  Pizza pizza = Pizza.fromJson({
+    keyId: int.tryParse(txtId.text) ?? 0,
+    keyName: txtName.text,
+    keyDescription: txtDescription.text,
+    keyPrice: double.tryParse(txtPrice.text) ?? 0,
+    keyImage: txtImageUrl.text,
+    keyCategory: txtCategory.text,
+  });
+  final result = await (widget.isNew
+    ? helper.postPizza(pizza)
+    : helper.putPizza(pizza));    
+  setState(() {
+    operationResult = result;
+  });
+}
+  
   @override
   void dispose() {
     txtId.dispose();
@@ -80,9 +115,19 @@ class _PizzaDetailScreenState extends State<PizzaDetailScreen> {
               ),
               const SizedBox(height: 48),
               ElevatedButton(
-                child: const Text('Send Post'),
-                onPressed: () {
-                  postPizza();
+                child: Text(widget.isNew ? 'Create' : 'Save'),
+                onPressed: () async {
+                  if (widget.isNew) {
+                    await postPizza();
+                  } else {
+                    await savePizza();
+                    final message = operationResult.isNotEmpty
+                        ? operationResult
+                        : 'Pizza was updated';
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(content: Text(message)),
+                    );
+                  }
                 },
               ),
             ],

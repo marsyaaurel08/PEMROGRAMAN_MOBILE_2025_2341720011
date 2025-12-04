@@ -26,6 +26,8 @@ Capture hasil praktikum
 
 # Praktikum 2 : Mengirim Data ke Web Service (POST)
 
+# Soal 2
+
 Menambahkan field baru dalam JSON maupun POST ke Wiremock!
 
 ![Soal 2](./store_data_marsya/img/w14_praktikum2_soal2.png)
@@ -33,3 +35,13 @@ Menambahkan field baru dalam JSON maupun POST ke Wiremock!
 Capture hasil praktikum berupa gif
 
 ![Hasil Praktikum 2](./store_data_marsya/img/w14_praktikum2.gif)
+
+# Praktikum 3 : Memperbarui Data di Web Service (PUT)
+
+# Soal 3
+
+Ubah salah satu data dengan Nama dan Nim, kemudian memperhatikan hasilnya
+
+Capture hasil praktikum berupa gif
+
+![Hasil Praktikum 3 soal 3](./store_data_marsya/img/w14_praktikum3_soal3.gif)
