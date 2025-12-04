@@ -45,3 +45,9 @@ Ubah salah satu data dengan Nama dan Nim, kemudian memperhatikan hasilnya
 Capture hasil praktikum berupa gif
 
 ![Hasil Praktikum 3 soal 3](./store_data_marsya/img/w14_praktikum3_soal3.gif)
+
+# Praktikum 4 : Menghapus Data dari Web Service (DELETE)
+
+Capture hasil praktikum berupa gif
+
+![Hasil Praktikum 4 soal 4](./store_data_marsya/img/w14_praktikum4_soal4.gif)

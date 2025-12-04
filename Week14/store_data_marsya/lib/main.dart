@@ -35,6 +35,7 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   String pizzaString = '';
   List<Pizza> myPizzas = [];
+  bool isLoading = true;
   int appCounter = 0;
   String documentsPath = '';
   String tempPath = '';
@@ -134,6 +135,76 @@ class _MyHomePageState extends State<MyHomePage> {
       myfile = File('$documentsPath/data.txt');
       writeFile();
     });
+    // load pizzas into local state so we can modify (dismiss) them locally
+    callPizzas().then((list) {
+      setState(() {
+        myPizzas = list;
+        isLoading = false;
+      });
+    }).catchError((_) {
+      setState(() {
+        myPizzas = [];
+        isLoading = false;
+      });
+    });
+  }
+
+  Future<void> _confirmAndRemove(int index) async {
+    if (index < 0 || index >= myPizzas.length) return;
+    final pizza = myPizzas[index];
+    final confirmed = await showDialog<bool>(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: Text('Delete ${pizza.pizzaName}?'),
+        content: const Text('Are you sure you want to delete this pizza?'),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(context, false),
+            child: const Text('Cancel'),
+          ),
+          TextButton(
+            onPressed: () => Navigator.pop(context, true),
+            child: const Text('Delete'),
+          ),
+        ],
+      ),
+    );
+    if (confirmed == true) {
+      await _removePizzaAt(index);
+    }
+  }
+
+  Future<void> _removePizzaAt(int index) async {
+    if (index < 0 || index >= myPizzas.length) return;
+    final removedPizza = myPizzas[index];
+    setState(() {
+      myPizzas.removeAt(index);
+    });
+    try {
+      // if pizza has no valid id, skip remote delete
+      if (removedPizza.id <= 0) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('${removedPizza.pizzaName} removed (local only)')),
+        );
+        return;
+      }
+      HttpHelper helper = HttpHelper();
+      final ok = await helper.deletePizza(removedPizza.id);
+      if (!ok) throw Exception('Delete failed');
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('${removedPizza.pizzaName} removed')),
+      );
+    } catch (e) {
+      // restore on failure
+      setState(() {
+        // put it back at the same index if possible
+        final insertIndex = (index <= myPizzas.length) ? index : myPizzas.length;
+        myPizzas.insert(insertIndex, removedPizza);
+      });
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('Failed to remove ${removedPizza.pizzaName}')),
+      );
+    }
   }
 
   String convertToJSON(List<Pizza> pizzas) {
@@ -150,40 +221,49 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
         backgroundColor: Colors.blueGrey,
       ),
-      body: FutureBuilder(
-        future: callPizzas(),
-        builder: (BuildContext context, AsyncSnapshot<List<Pizza>> snapshot) {
-          if (snapshot.hasError) {
-            return const Text('Something went wrong');
-          }
-          if (!snapshot.hasData) {
-            return const CircularProgressIndicator();
-          }
-          return ListView.builder(
-            itemCount: (snapshot.data == null) ? 0 : snapshot.data!.length,
-            itemBuilder: (BuildContext context, int position) {
-              final pizza = snapshot.data![position];
-              return ListTile(
-                title: Text(pizza.pizzaName),
-                subtitle: Text(
-                  pizza.description + ' - € ' + pizza.price.toString(),
-                ),
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => PizzaDetailScreen(
-                        pizza: pizza,
-                        isNew: false,
-                      ),
+      body: isLoading
+          ? const Center(child: CircularProgressIndicator())
+          : ListView.builder(
+              itemCount: myPizzas.length,
+              itemBuilder: (BuildContext context, int position) {
+                final pizza = myPizzas[position];
+                return Dismissible(
+                  key: ValueKey(pizza.id.toString() + position.toString()),
+                  direction: DismissDirection.endToStart,
+                  background: Container(
+                    color: Colors.red,
+                    alignment: Alignment.centerRight,
+                    padding: const EdgeInsets.only(right: 20),
+                    child: const Icon(Icons.delete, color: Colors.white),
+                  ),
+                  onDismissed: (direction) {
+                    _removePizzaAt(position);
+                  },
+                  child: ListTile(
+                    title: Text(pizza.pizzaName),
+                    subtitle: Text(
+                      pizza.description + ' - € ' + pizza.price.toString(),
                     ),
-                  );
-                },
-              );
-            },
-          );
-        },
-      ),
+                    trailing: IconButton(
+                      icon: const Icon(Icons.delete, color: Colors.red),
+                      onPressed: () => _confirmAndRemove(position),
+                      tooltip: 'Delete',
+                    ),
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => PizzaDetailScreen(
+                            pizza: pizza,
+                            isNew: false,
+                          ),
+                        ),
+                      );
+                    },
+                  ),
+                );
+              },
+            ),
       floatingActionButton: FloatingActionButton(
         child: const Icon(Icons.add),
         onPressed: () {
